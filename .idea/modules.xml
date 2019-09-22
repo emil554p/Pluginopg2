@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/jquery-plugin-skabelon.iml" filepath="$PROJECT_DIR$/.idea/jquery-plugin-skabelon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/jquery-plugin-skabelon.iml" filepath="$PROJECT_DIR$/.idea/tabPlugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/tabPlugin.iml" filepath="$PROJECT_DIR$/.idea/tabPlugin.iml" />
     </modules>
   </component>
 </project>

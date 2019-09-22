@@ -9,13 +9,14 @@
         const defaultOptions = {
             colors:{
                 bgcolor: 'red',
-                txtcolor: 'white'
+                txtcolor: 'blue'
             },
             text:{
                 textsize: '50px',
+                hover: 'pointer',
             },
             animations:{
-                height: '200px',
+                height: 'toggle',
             }
 
         };
@@ -27,9 +28,14 @@
             $(el).css('background-color', opts.colors.bgcolor);
             $(el).css('color', opts.colors.txtcolor);
             $(el).css('font-size', opts.text.textsize);
+            $(el).find('p').css('cursor', opts.text.hover);
             $(el).find('p').click(function(){
             $(el).animate({height: opts.animations.height})
             });
+
+            $(el)
+
+
         });
     };
 

@@ -15,7 +15,6 @@
                 textsize: '50px',
             },
             animations:{
-                texteffect: '0',
                 height: '200px',
             }
 
@@ -25,7 +24,12 @@
 
         // Går gennem alle elementer der matcher selector = idx=index, el=element
         return this.each(function (idx, el) {
-
+            $(el).css('background-color', opts.colors.bgcolor);
+            $(el).css('color', opts.colors.txtcolor);
+            $(el).css('font-size', opts.text.textsize);
+            $(el).find('p').click(function(){
+            $(el).animate({height: opts.animations.height})
+            });
         });
     };
 

@@ -8,32 +8,61 @@
         // Sætter default options, hvis der ikke sendes noget med
         const defaultOptions = {
             colors:{
-                bgcolor: 'red',
-                txtcolor: 'blue'
+                bgcolor: 'blue',
+                txtcolor: 'red'
             },
             text:{
-                textsize: '50px',
+                textsize: '15px',
                 hover: 'pointer',
+                txtbgcolor: 'white',
+                bgheight: '50px',
             },
             animations:{
-                height: 'toggle',
+                fadein: 'slow',
             }
 
         };
+
+
+
 
         const opts = $.extend(true, {}, defaultOptions, options);
 
         // Går gennem alle elementer der matcher selector = idx=index, el=element
         return this.each(function (idx, el) {
+            $(el).css('height', opts.text.bgheight);
+
             $(el).css('background-color', opts.colors.bgcolor);
-            $(el).css('color', opts.colors.txtcolor);
-            $(el).css('font-size', opts.text.textsize);
-            $(el).find('p').css('cursor', opts.text.hover);
-            $(el).find('p').click(function(){
-            $(el).animate({height: opts.animations.height})
+
+            $(el).find('li a').css('color', opts.colors.txtcolor);
+
+            $(el).find('li a').css('font-size', opts.text.textsize);
+
+            $(el).find('li a').css('cursor', opts.text.hover);
+
+            $(el).find('li a').css('background-color', opts.text.txtbgcolor);
+
+            $(el).find('li a:not(:first)').addClass('inactive');
+
+            $('.container').hide();
+
+            $('.container:first').show();
+
+            $(el).find('li a').click(function(){
+                let t = $(this).attr('href');
+                $(el).find('li a').addClass('inactive');
+                $(this).removeClass('inactive');
+                $('.container').hide();
+                $(t).fadeIn(opts.animations.fadein);
+                return false;
             });
 
-            $(el)
+            if($(this).hasClass('inactive')){
+                $(el).find('li a').addClass('inactive');
+                $(this).removeClass('inactive');
+                $('.container').hide();
+                $(t).fadeIn(opts.animations.fadein);
+            }
 
 
         });

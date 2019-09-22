@@ -8,7 +8,6 @@
 	<meta name="robots" content="All">
 	<meta name="author" content="Udgiver">
 	<meta name="copyright" content="Information om copyright">
-	
 	<link href="css/tabPlugin.css" rel="stylesheet" type="text/css">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,12 +15,22 @@
 
 <body>
 
-	<div class="tabsContainer">
-		<p id="txt1">Tab1</p>
-		<p id="txt2">Tab2</p>
-		<p id="txt3">Tab3</p>
-		<p id="txt4">Tab4</p>
-	</div>
+    <ul id="tabs">
+
+        <li><a href="#tab1">test1</a></li>
+        <li><a href="#tab2">test2</a></li>
+        <li><a href="#tab3">test3</a></li>
+        <li><a href="#tab4">test4</a></li>
+
+    </ul>
+
+    <div class="container" id="tab1">Test 1</div>
+    <div class="container" id="tab2">Test 2</div>
+    <div class="container" id="tab3">Test 3</div>
+    <div class="container" id="tab4">Test 4</div>
+
+
+
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -29,7 +38,7 @@
 	<script>
 	$(document).ready(function() {
 	
-		$(".tabsContainer").tabPlugin({
+		$("#tabs").tabPlugin({
 
 		});
 	});
